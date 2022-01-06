@@ -1,6 +1,6 @@
 import React from 'react'
-import product1 from '../assets/images/image-product-1.jpg'
-import trash from '../assets/images/icon-delete.svg'
+import product1 from '../../assets/images/image-product-1.jpg'
+import trash from '../../assets/images/icon-delete.svg'
 
 const cartDisplay = () => {
 	return (

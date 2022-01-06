@@ -44,9 +44,6 @@ header {
   justify-content: space-between;
   padding-right: 6rem;
 }
-.hamburger {
-  display: none;
-}
 .navbar {
   display: grid;
   grid-template-columns: auto auto;
@@ -103,7 +100,15 @@ ul a:hover {
   margin-top: 0;
   border-bottom: 1px solid var(--clr-grayish-blue);
 }
-
+.sidebar {
+  display: none;
+}
+.hamburger {
+  display: none;
+}
+.close-item {
+  display: none;
+}
 @media only screen and (max-width: 1439px) {
   body {
     padding: 2rem 0 6rem 0;
@@ -113,18 +118,21 @@ ul a:hover {
     margin: auto;
   }
   header {
-    padding: 0 1rem;
+    padding: 0;
   }
   .navbar {
     grid-column-gap: 1rem;
+    padding-left: 1rem;
   }
   .hamburger {
     display: block;
     position: relative;
-    top: 3px;
+    bottom: 8px;
+    background: none;
+    border: none;
   }
   nav {
-    display: none;;
+    display: none;
   }
   .cart-order {
     grid-column-gap: .75rem;
@@ -133,7 +141,14 @@ ul a:hover {
     width: 1.6rem;
     bottom: 5px;
   }
-  .nav-mobile {    
+/*
+  ---------------
+    sidebar.js
+  ---------------
+
+*/  
+  .sidebar {    
+    display: block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -142,28 +157,28 @@ ul a:hover {
               rgba(0, 0, 0, 0.09) 0px 8px 4px, 
               rgba(0, 0, 0, 0.09) 0px 16px 8px, 
               rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    padding: 2rem 6rem 0 2rem;
+    padding: 2.3rem 6rem 0 1rem;
     background-color: var(--clr-white);
-    z-index: 1;
+    z-index: 2;
   }
-  .nav-close-btn {
+  .sidebar-btn {
     background: transparent;
     border: none;
   }
-  .navbar-mobile {
+  .sidebar-center {
     margin-top: 3rem;
   }
-  .navbar-mobile ul {
+  .sidebar-center ul {
     display: flex;
     flex-direction: column;
   }
-  .navbar-mobile a {
+  .sidebar-center a {
     padding-bottom: 1.5rem;
     color: var(--clr-black);
     font-weight: 700;
     cursor: pointer;
   }
-  .navbar-mobile a:hover {
+  .sidebar-center a:hover {
     border-bottom: none;
   }
 }
@@ -184,7 +199,7 @@ ul a:hover {
   float: right;
   bottom: 2rem;
   background-color: var(--clr-white);
-  display: none;
+/*  display: none;*/
 }
 .title {
   padding: 1.5rem;
