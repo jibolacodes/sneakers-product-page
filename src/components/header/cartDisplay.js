@@ -13,7 +13,7 @@ const cartDisplay = () => {
         <section className="center">
           <div className="checkout">
            <div className="checkout-img">
-              <img src={product1} alt="checkout-img" />
+              <img src={product1} alt="product-img" />
             </div>
             <div className="checkout-detail">
               <p>Fall Limited Edition Sneakers</p>

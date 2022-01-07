@@ -352,7 +352,7 @@ ul a:hover {
   text-decoration: line-through;
   font-weight: var(--fw-2);
 }
-.order-action {
+.order-action, .form {
   width: 480px;
   height: fit-content;
   display: grid;
@@ -377,6 +377,14 @@ ul a:hover {
 }
 .order-no-center span {
   font-weight: var(--fw-2);
+}
+.number {
+  border: none;
+  text-align: center;
+  background-color: var(--clr-light-grayish-blue);
+  font-family: var(--ff);
+  font-weight: var(--fw-2);
+  font-size: var(--fs);
 }
 
 /*.btn span > img {
