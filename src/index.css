@@ -49,6 +49,7 @@ header {
   grid-template-columns: auto auto;
   grid-column-gap: 5rem;
 }
+
 ul {
   display: inline-flex;
   list-style-type: none;
@@ -80,11 +81,11 @@ ul a:hover {
   color: var(--clr-white);
   background-color: var(--clr-orange);
   text-align: center;
-  padding: 1px 7px;
   border-radius: 12px;
   position: relative;
-  bottom: 36px;
-  left: 9px;
+  bottom: 30px;
+  left: 12px;
+  width: 24px;
   /*visibility: hidden;*/
 }
 .person-img {

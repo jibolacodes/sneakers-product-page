@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import Sidebar from '../header/sidebar'
-import Links from '../header/links'
-import logo from '../../assets/images/logo.svg'
-import hamburger from '../../assets/images/icon-menu.svg'
+import Sidebar from './sidebar'
+import Links from './data/links'
+import logo from '../assets/images/logo.svg'
+import hamburger from '../assets/images/icon-menu.svg'
 
 
 const Navbar = () => {

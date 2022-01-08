@@ -1,17 +1,18 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-
-import Navbar from './header/navbar'
-import Cart from './header/cart'
+// components
+import Navbar from './navbar'
+import Cart from './cart'
+// images
 import logo from '../assets/images/logo.svg'
 import hamburger from '../assets/images/icon-menu.svg'
 
-const Header = () => {
+const Header = ({itemNo}) => {
 	return (
 		<>
 		<header>
 			<Navbar />
-		  <Cart />
+			<Cart itemNo={itemNo}/>			
 		</header>
 		<div className="border-line"></div>
 		</>

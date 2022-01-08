@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import Links from './links'
+import Links from './data/links'
 import Navbar from './navbar'
-import { ReactComponent as CloseBtn } from '../../assets/images/icon-close.svg'
+import { ReactComponent as CloseBtn } from '../assets/images/icon-close.svg'
 
 const Sidebar = () => {
   const [links, setLinks] = useState(Links);
