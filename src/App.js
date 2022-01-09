@@ -11,7 +11,9 @@ import Data from './components/data/data'
 
 const App = () => {
 const [itemNo, setItemNo] = useState(0);
-const [cart, setCart] = useState(Data)
+const [cart, setCart] = useState(Data);
+
+
 
 const updateCart = (newCart) => { 
   setCart([...cart, newCart]);
@@ -24,8 +26,10 @@ const updateItemNo = (newItemNo) => {
     <main>
       <Header itemNo={itemNo}/>
       <CartDisplay cart={cart} itemNo={itemNo}/>
-      <Product cart={cart}/>
-      <Form updateCart={updateCart} updateItemNo={updateItemNo}/>
+      <Product cart={cart}
+               updateCart={updateCart} 
+               updateItemNo={updateItemNo}
+      />
     </main>
   )
 }

@@ -200,7 +200,7 @@ ul a:hover {
   float: right;
   bottom: 2rem;
   background-color: var(--clr-white);
-/*  display: none;*/
+  display: none;
 }
 .title {
   padding: 1.5rem;
