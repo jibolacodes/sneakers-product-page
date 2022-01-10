@@ -1,16 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // components
 import Navbar from './navbar'
 import Cart from './cart'
 
 
-const Header = ({itemNo}) => {
+const Header = ({itemNo, toggleModal}) => {
 	return (
 		<>
 		<header>
 			<Navbar />
-			<Cart itemNo={itemNo}/>			
+			<Cart itemNo={itemNo} toggleModal={toggleModal}/>			
 		</header>
 		<div className="border-line"></div>
 		</>

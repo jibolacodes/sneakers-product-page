@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import images from '../components/data/images';
 import Form from '../components/form';
+import ProductModal from '../components/productModal'
 
 import { ReactComponent as Next } from '../assets/images/icon-next.svg';
 import { ReactComponent as Prev } from '../assets/images/icon-previous.svg';
@@ -8,7 +9,7 @@ import { ReactComponent as Prev } from '../assets/images/icon-previous.svg';
 
 const Product = ({cart, updateCart, updateItemNo}) => {
   const [index, setIndex] = useState(0)
-  const {url, thumbnail} = images[index];
+  const {url} = images[index];
 
 
 const checkNumber = (number) => {
@@ -39,7 +40,6 @@ return (
 	        <div className="product-slide">
 	          <div className="current-image">
 	            <img src={require(`../${url}`)} alt="current" />
-              <p></p>
 	          </div>
             {
               images.map((item)=> {
@@ -68,7 +68,7 @@ return (
               </button>
             </div>
             <div className="image-container">
-              <img src={require(`../${url}`)} alt="" /> 
+              <img src={require(`../${url}`)} alt={""} /> 
             </div>
           </div>
           {
@@ -94,6 +94,7 @@ return (
             })
           }
         </section>
+        <ProductModal />
       </div>
 	)
 }
