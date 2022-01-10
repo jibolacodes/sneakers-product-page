@@ -1,69 +1,52 @@
-import React, { useState, useEffect } from 'react'
-import trash from '../assets/images/icon-delete.svg'
+import React, { useState } from 'react';
+import images from '../components/data/images';
+import Form from '../components/form';
 
-
-import image1 from '../assets/images/image-product-1.jpg'
-import thumbnail from '../assets/images/image-product-1-thumbnail.jpg'
-
-
-import minus from '../assets/images/icon-minus.svg'
-import plus from '../assets/images/icon-plus.svg'
-import cart from '../assets/images/icon-cart.svg'
-import CartDisplay from '../components/cart'
-
-import images from '../components/data/images'
-import Form from '../components/form'
-
-
-import { ReactComponent as Multiply } from '../assets/images/icon-multiply.svg'
-import { ReactComponent as Next } from '../assets/images/icon-next.svg'
-import { ReactComponent as Prev } from '../assets/images/icon-previous.svg'
+import { ReactComponent as Next } from '../assets/images/icon-next.svg';
+import { ReactComponent as Prev } from '../assets/images/icon-previous.svg';
 
 
 const Product = ({cart, updateCart, updateItemNo}) => {
   const [index, setIndex] = useState(0)
-  const [showImage, setShowImage] = useState(images)
-
-  console.log(showImage);
-  
-
   const {url, thumbnail} = images[index];
-  const checkNumber = (number) => {
-    if(number > images.length - 1) {
-      return 0;
-    }
-    if(number < 0){
-      return images.length - 1;
-    }
-    return number;
-  }
-  const nextImage = (index) => {
-    setIndex((index) => {
-      let newIndex = index + 1
-      return checkNumber(newIndex)
-    })
-  }
-  const prevImage = (index) => {
-    setIndex((index) => {
-      let newIndex = index - 1
-      return checkNumber(newIndex);
-    })
-  }
 
 
+const checkNumber = (number) => {
+  if(number > images.length - 1) {
+    return 0;
+  }
+  if(number < 0){
+    return images.length - 1;
+  }
+  return number;
+}
+const nextImage = (index) => {
+  setIndex((index) => {
+    let newIndex = index + 1
+    return checkNumber(newIndex)
+  })
+}
+const prevImage = (index) => {
+  setIndex((index) => {
+    let newIndex = index - 1
+    return checkNumber(newIndex);
+  })
+}
 
-	return (
-		  <div className="product-container">
+
+return (
+  <div className="product-container">
 	        <div className="product-slide">
 	          <div className="current-image">
-	            {/*<img src={require(`../${showImage}`)} alt="current-image" />*/}
+	            <img src={require(`../${url}`)} alt="current" />
+              <p></p>
 	          </div>
             {
-              images.map((item, showImage)=> {
+              images.map((item)=> {
                 const {id, name, thumbnail} = item
                 return (
       	          <div className="thumbnail" key={id} >
-      	            <button type="button">
+      	            <button type="button" onClick={()=>setIndex(id - 1)}>
       	              <img src={require(`../${thumbnail}`)} alt={name} />
       	            </button>
                     
