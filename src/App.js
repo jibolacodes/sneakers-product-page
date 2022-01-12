@@ -1,8 +1,5 @@
 import React, {useState, useRef} from 'react'
 
-
-
-// Pages
 import Header from './components/header'
 import CartDisplay from './components/cartDisplay'
 import Product from './components/product'

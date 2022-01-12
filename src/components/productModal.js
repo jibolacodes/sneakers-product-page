@@ -10,6 +10,7 @@ import { ReactComponent as Prev } from '../assets/images/icon-previous.svg'
 
 const ProductModal = () => {
 	const [index, setIndex] = useState(0)
+	const [modal, setModal] = useState(false)
 	const {id, name, url, thumbnail} = images[index]
 
 	const checkNumber = (number) => {
@@ -37,38 +38,38 @@ const ProductModal = () => {
 
 
 	return (
-	<div className="product-modal" key={id}>
+	<div className={modal ? 'close-item' : 'product-modal'} key={id}>
         <div className="close-center">
-          <button className="close-btn">
+          <button className="close-btn" onClick={()=>setModal(!modal)}>
        			<Multiply className="multiply" />
           </button>
         </div>
 	        <div className="modal-slide">
-		        <div className="top-img">
+		        <div className="modal-img">
 		          <button className="slide-btn prev-btn" onClick={prevImage}>
 		          	<Prev />
 		          </button>
 		          <div className="current-image">
 		            <img src={require(`../${url}`)} alt={name} />
 		          </div>
-		          <button className="slide-btn next-btn">
+		          <button className="slide-btn next-btn" onClick={nextImage}>
 		          	<Next />
 		          </button>
 		        </div>	
-      <div className="thumbnail">
-      {
-        images.map((item)=> {
-          const {id, name, thumbnail} = item
-          return (
-            <div key={id} >
-              <button className='img-btn' type="button" onClick={()=>setIndex(id - 1)}>
-                <img src={require(`../${thumbnail}`)} alt={name} />
-              </button>  
-            </div>
-          )
-        })
-      }
-      </div>
+			      <div className="modal-thumbnail">
+			      {
+			        images.map((item)=> {
+			          const {id, name, thumbnail} = item
+			          return (
+			            <div key={id} >
+			              <button className='modal-img-btn' type="button" onClick={()=>setIndex(id - 1)}>
+			                <img src={require(`../${thumbnail}`)} alt={name} />
+			              </button>  
+			            </div>
+			          )
+			        })
+			      }
+			      </div>
 	        </div>
     </div>
 	)

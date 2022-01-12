@@ -35,3 +35,4 @@ const Cart = ({itemNo, toggleModal}) => {
 }
 
 export default Cart
+

@@ -1,5 +1,5 @@
 import React from 'react'
-// components
+
 import Navbar from './navbar'
 import Cart from './cart'
 

@@ -9,6 +9,7 @@ import { ReactComponent as Prev } from '../assets/images/icon-previous.svg';
 
 const Product = ({cart, updateCart, updateItemNo}) => {
   const [index, setIndex] = useState(0)
+  const [modal, setModal] = useState(false)
   const {url} = images[index];
 
 
@@ -36,9 +37,9 @@ const prevImage = (index) => {
 return (
   <div className="product-container">
     <div className="product-slide">
-      <div className="current-image">
+      <button className="current-image" onClick={()=>setModal(!modal)}>
         <img src={require(`../${url}`)} alt="current" />
-      </div>
+      </button>
       <div className="thumbnail">
       {
         images.map((item)=> {
@@ -90,7 +91,7 @@ return (
         })
       }
     </section>
-  <ProductModal />
+  {modal && <ProductModal />}
   </div>
 	)
 }

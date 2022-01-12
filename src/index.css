@@ -206,11 +206,8 @@ ul a:hover {
               rgba(0, 0, 0, 0.09) 0px 32px 16px;
   border-radius: 10px;
   padding-bottom: 1.8rem;
-  /* position: relative;
-  float: right;
-  bottom: 2rem; */
   position: absolute;
-  right: 9em;
+  right: 7rem;
   top: 5rem;
   background-color: var(--clr-white);
 }
@@ -289,6 +286,7 @@ ul a:hover {
     justify-content: center;
   }
   .cart-display {
+    position: absolute;
     top: 5.5rem;
     left: 0;
     right: 0;
@@ -319,6 +317,7 @@ ul a:hover {
 }
 .current-image {
   margin-bottom: 2rem;
+  border: none;
 }
 .current-image img {
   width: 450px;
@@ -330,13 +329,16 @@ ul a:hover {
 }
 .img-btn {
   border: none;
+  border-radius: 10px;
+}
+.img-btn:hover {
+  border: 2px solid var(--clr-orange);
 }
 .thumbnail img {
   width: 6rem;
   border-radius: 10px;
 }
 .thumbnail img:hover {
-  border: 2px solid var(--clr-orange);
   opacity: 0.3;
 }
 .product-info {
@@ -442,6 +444,14 @@ ul a:hover {
   text-transform: capitalize;
   cursor: pointer;
 }
+.submit-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, 
+              rgba(0, 0, 0, 0.09) 0px 4px 2px, 
+              rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+              rgba(0, 0, 0, 0.09) 0px 16px 8px, 
+              rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  opacity: 0.8;
+}
 .submit-btn span > svg {
   margin-right: 1rem;
   position: relative;
@@ -530,7 +540,7 @@ ul a:hover {
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
-  pointer-events: none;
+  /*pointer-events: none;*/
   margin: auto;
   display: flex;
   justify-content: center;
@@ -552,7 +562,10 @@ ul a:hover {
   border: none;
   background-color: transparent;
 }
-.top-img {
+.close-btn:hover {
+  background-color: green;
+}
+.modal-img {
   display: grid;
   grid-template-columns: auto auto auto;
 }
@@ -571,6 +584,31 @@ ul a:hover {
 .next-btn {
   position: relative;
   right: 20px;
+}
+.close-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  cursor: pointer;
+}
+.modal-thumbnail {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5rem;
+}
+.modal-img-btn {
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.modal-img-btn:hover {
+  border: 2px solid var(--clr-orange);
+}
+.modal-thumbnail img {
+  width: 4rem;
+  border-radius: 10px;
+}
+.modal-thumbnail img:hover {
+  opacity: 0.3;
 }
 @media only screen and (max-width: 1439px) {
   .product-modal {

@@ -67,3 +67,4 @@ const CartDisplay = ({cart, itemNo}) => {
 }
 
 export default CartDisplay
+
