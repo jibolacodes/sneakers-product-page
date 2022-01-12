@@ -31,13 +31,13 @@ Users should be able to:
 
 ## Screenshot
 
-![](./assets/images/screenshot-mobile.png)
-![](./assets/images/screenshot-mobile-active.png)
-![](./assets/images/screenshot-desktop.png)
-![](./assets/images/screenshot-desktop-active.png)
+![mobile](/assets/images/screenshot-mobile.png)
+![mobile-active](/assets/images/screenshot-mobile-active.png)
+![desktop](/assets/images/screenshot-desktop.png)
+![desktop-active](/assets/images/screenshot-desktop-active.png)
 
 ## Link
-Link to live site : 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7f4538e9-a5a7-41aa-8af9-598e0f0e5476/deploy-status)](https://app.netlify.com/sites/jibolacodes-sneakers-product-page/deploys)
 Link to solution site :
 
 ## My process
@@ -53,34 +53,18 @@ Link to solution site :
 
 ### What I learned
 
-I learned how to use the React hooks : useState, useRef, useEffect.
+I learned how to use the React hooks : useState, useRef, useEffect, prop drilling and call back functions
 
-----------
-Components
-----------
-1. navbar : Used useEffect hook to create a toggle effect to open the sidebar.
-2. sidebar : Used useEffect hook to close the sidebar after being opened by the button in navbar
-3. form : Used callback function and prop drilling to update the cartDisplay number of orders
-
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- (https://www.w3schools.com/react/) - This helped me in learning useState, useEffect and useRef hooks.
 
 ## Author
 
-- Website - [Ajibola Akindunbi](https://www.your-site.com)
 - Frontend Mentor - [@jibolacodes](https://www.frontendmentor.io/profile/jibolacodes)
 - Twitter - [@jibolacodes](https://www.twitter.com/yourusername)
 
-## Acknowledgments
 
 
 
