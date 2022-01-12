@@ -4,7 +4,6 @@ import avatar from '../assets/images/image-avatar.png'
 
 const Cart = ({itemNo, toggleModal}) => {
 	const [getData, setGetData] = useState(0);
-	// const [show, setShow] = useState(false);
 	const refContainer = useRef(null);
 
 	useEffect(() => {
@@ -18,21 +17,19 @@ const Cart = ({itemNo, toggleModal}) => {
 		})
 	}, [itemNo])
 
-
-
 	return (
 		<>
-	  <div className="cart-order">
-	    <button className="cart" onClick={()=>toggleModal()}>
-	      <img src={cart} alt="cart-icon" />
-	      <h3 className="total" ref={refContainer}>{itemNo}</h3>
-	    </button>
-	    <div>
-	      <a href="#person">
-	        <img className="person-img" src={avatar} alt="avatar" />
-	      </a>   
-	    </div>
-	  </div>
+		  <div className="cart">
+		    <button className="cart-btn" onClick={()=>toggleModal()}>
+		      <img src={cart} alt="cart-icon" />
+		      <h3 className="total" ref={refContainer}>{itemNo}</h3>
+		    </button>
+		    <div>
+		      <div className="person">
+		        <img className="person-img" src={avatar} alt="avatar" />
+		      </div>   
+		    </div>
+		  </div>
 	  </>
 	)
 }

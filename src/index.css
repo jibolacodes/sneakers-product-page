@@ -67,13 +67,18 @@ ul a:hover {
   border-bottom: 4px solid var(--clr-orange);
   cursor: pointer;
 }
-.cart-order {
+.cart {
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 1.5rem;
 }
-.cart {
+.cart-btn {
   width: 40px;
+  background: transparent;
+  border: none;
+  position: relative;
+  bottom: 16px;
+
 }
 .total {
   font-size: 0.6rem;
@@ -84,14 +89,16 @@ ul a:hover {
   border-radius: 12px;
   position: relative;
   bottom: 30px;
-  left: 12px;
+  left: 16px;
   width: 24px;
-  /*visibility: hidden;*/
+}
+.person {
+  position: relative;
+  bottom: 10px;
 }
 .person-img {
   width: 3rem;
   position: relative;
-  bottom: 15px;
 }
 .person-img:hover {
   border: 2px solid var(--clr-orange);
@@ -112,14 +119,15 @@ ul a:hover {
 }
 @media only screen and (max-width: 1439px) {
   body {
-    padding: 2rem 0 6rem 0;
+     /*padding: 2rem 0 6rem 0;*/
+      padding: 1rem 0 6rem 0;
   }
   main {
     max-width: var(--width-mobile);
     margin: auto;
   }
   header {
-    padding: 0;
+    padding: 1rem 0;
   }
   .navbar {
     grid-column-gap: 1rem;
@@ -128,26 +136,28 @@ ul a:hover {
   .hamburger {
     display: block;
     position: relative;
-    bottom: 8px;
     background: none;
     border: none;
   }
   nav {
     display: none;
   }
-  .cart-order {
+  .cart {
     grid-column-gap: .75rem;
+    padding-right: 1rem;
+  }
+  .cart-btn {
+    bottom: 0;
+  }
+  .cart a {
+    height: 0;
+  }
+  .person {
+    bottom: 0;
   }
   .person-img {
     width: 1.6rem;
-    bottom: 5px;
   }
-/*
-  ---------------
-    sidebar.js
-  ---------------
-
-*/  
   .sidebar {    
     display: block;
     position: fixed;
@@ -158,7 +168,7 @@ ul a:hover {
               rgba(0, 0, 0, 0.09) 0px 8px 4px, 
               rgba(0, 0, 0, 0.09) 0px 16px 8px, 
               rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    padding: 2.3rem 6rem 0 1rem;
+    padding: 2.3rem 6rem 0 1.1rem;
     background-color: var(--clr-white);
     z-index: 2;
   }
@@ -204,13 +214,13 @@ ul a:hover {
   top: 5rem;
   background-color: var(--clr-white);
 }
-.title {
+.cart-title {
   padding: 1.5rem;
 }
-.title h2 {
+.cart-title h2 {
   font-size: 1rem;
 }
-.center {
+.checkout-center {
   display: flex;
   flex-direction: column;
 }
@@ -274,15 +284,12 @@ ul a:hover {
 }
 
 @media only screen and (max-width: 1439px) {
-  .cart-box {
+  .cart-container {
     display: flex;
     justify-content: center;
   }
   .cart-display {
-    /* bottom: 0;
-    position: absolute;
-    top: 5.2rem; */
-    top: 5rem;
+    top: 5.5rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -303,8 +310,12 @@ ul a:hover {
 .product-container {
   display: grid;
   grid-template-columns: auto auto;
-  grid-column-gap: 8rem;
+  grid-column-gap: 1rem;
   padding: 6rem 4rem;
+}
+.product-slide {
+  width: fit-content;
+  padding: 0 1rem;
 }
 .current-image {
   margin-bottom: 2rem;
@@ -317,12 +328,16 @@ ul a:hover {
   display: flex;
   justify-content: space-between;
 }
+.img-btn {
+  border: none;
+}
 .thumbnail img {
   width: 6rem;
   border-radius: 10px;
 }
 .thumbnail img:hover {
   border: 2px solid var(--clr-orange);
+  opacity: 0.3;
 }
 .product-info {
   width: 480px;
@@ -355,7 +370,7 @@ ul a:hover {
 }
 .current-price h1 {
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 .special-offer {
   background-color: var(--clr-pale-orange);
@@ -374,7 +389,11 @@ ul a:hover {
   text-decoration: line-through;
   font-weight: var(--fw-2);
 }
-.order-action, .form {
+/*
+===================================================
+              form.js component
+===================================================*/
+.form {
   width: 480px;
   height: fit-content;
   display: grid;
@@ -382,22 +401,23 @@ ul a:hover {
   column-gap: 1rem;
   margin-top: 1.5rem;
 }
-.order-no {
+.form-center {
   background-color: var(--clr-light-grayish-blue);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 }
-.order-no-center {
+.input {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-.order-no-center button {
+.input button {
   border: none;
+  background-color: transparent;
 }
-.order-no-center span {
+.input span {
   font-weight: var(--fw-2);
 }
 .number {
@@ -407,16 +427,22 @@ ul a:hover {
   font-family: var(--ff);
   font-weight: var(--fw-2);
   font-size: var(--fs);
+  width: 10px;
 }
-
-/*.btn span > img {
-  margin-right: 1rem;
-  width: 1.2rem;
-  position: relative;
-  top: 2px;
-  fill: red;
-}*/
-.btn span > svg {
+.submit-btn {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-family: var(--ff);
+  font-weight: var(--fw-2);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.submit-btn span > svg {
   margin-right: 1rem;
   position: relative;
   top: 2px;
@@ -427,7 +453,7 @@ ul a:hover {
 }
 
 @media only screen and (max-width: 1439px) {
-  .order-no-center {
+  .input {
   justify-content: space-between;
   }
   .product-container {
@@ -460,7 +486,7 @@ ul a:hover {
     padding: 0 1rem;
     max-width: var(--width-mobile);
   }
-  .pricing, .order-action {
+  .pricing, .form {
     width: 100vw;
   }
   .pricing h1 {
@@ -471,16 +497,16 @@ ul a:hover {
     display: flex;
     align-items: center;
   }
-  .order-action {
+  .form {
     display: grid;
     grid-template-columns: auto;
     padding: 0 1rem;
     max-width: var(--width-mobile);
   }
-  .order-no-center {
+  .input {
     padding: 1rem;
   }
-  .btn-center .btn {
+  .submit-btn {
     width: 100%;
     margin-top: 1.5rem;
   }
@@ -515,6 +541,10 @@ ul a:hover {
   padding: 2rem;
   position: relative;
   left: 210px;
+}
+.modal-slide {
+  width: fit-content;
+  padding: 0;
 }
 .close-btn {
   width: 25px;

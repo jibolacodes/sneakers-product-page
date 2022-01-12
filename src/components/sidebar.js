@@ -10,25 +10,26 @@ const Sidebar = () => {
  
   return ( 
     <>
-    <div className={sidebar ? 'close-item' : 'sidebar'}>
-      <div className="sidebar-btn" onClick={()=>setSidebar(!sidebar)}>
-        <CloseBtn />
-      </div>
-        <div className="sidebar-center">
-          {
-            links.map((link) => {
-              const {id, name, url} = link;
-                return(
-                  <ul key={id}>
-                    <a href={url}>
-                      <li>{name}</li>
-                    </a>
-                  </ul>
-                )
-              })
-            }
+      <div className={sidebar ? 'close-item' : 'sidebar'}>
+        <div className="sidebar-btn" onClick={()=>setSidebar(!sidebar)}>
+          <CloseBtn />
         </div>
-    </div> 
+          <div className="sidebar-center">
+            {
+              links.map((link) => {
+                const {id, name, url} = link;
+                  return(
+                    <ul key={id}>
+                      <a href={url}>
+                        <li>{name}</li>
+                      </a>
+                    </ul>
+                  )
+                }
+              )
+            }
+          </div>
+      </div> 
     </>          
   )
 }

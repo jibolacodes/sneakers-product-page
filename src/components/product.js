@@ -33,69 +33,65 @@ const prevImage = (index) => {
     return checkNumber(newIndex);
   })
 }
-
-
 return (
   <div className="product-container">
-	        <div className="product-slide">
-	          <div className="current-image">
-	            <img src={require(`../${url}`)} alt="current" />
-	          </div>
-            {
-              images.map((item)=> {
-                const {id, name, thumbnail} = item
-                return (
-      	          <div className="thumbnail" key={id} >
-      	            <button type="button" onClick={()=>setIndex(id - 1)}>
-      	              <img src={require(`../${thumbnail}`)} alt={name} />
-      	            </button>
-                    
-      	          </div>
-                )
-              })
-            }
-	        </div>
-
-
-        <section className="product-info">
-          <div className="image-slide">
-            <div className="btn-slide">
-              <button className="slide-btn prev-btn" onClick={prevImage}>
-                <Prev />
-              </button>
-              <button className="slide-btn next-btn" onClick={nextImage}>
-                <Next />
-              </button>
-            </div>
-            <div className="image-container">
-              <img src={require(`../${url}`)} alt={""} /> 
-            </div>
-          </div>
-          {
-            cart.map((item)=> {
-              const {id, title, price, desc} = item
-              return (
-                <div key={id}>
-                  <p className="company-title">sneaker company</p>
-                  <h1 className="product-info-title">{title}</h1>
-                  <p className="more-info">{desc}</p>
-                  <div className="pricing">
-                    <div className="current-price">
-                      <h1>${price}<span className="special-offer">50%</span>
-                      </h1>
-                    </div>
-                    <div className="old-price">
-                      <p>${price * 2}.00</p>
-                    </div>
-                  </div>
-                <Form updateCart={updateCart} updateItemNo={updateItemNo}/>
-                </div>
-              )
-            })
-          }
-        </section>
-        <ProductModal />
+    <div className="product-slide">
+      <div className="current-image">
+        <img src={require(`../${url}`)} alt="current" />
       </div>
+      <div className="thumbnail">
+      {
+        images.map((item)=> {
+          const {id, name, thumbnail} = item
+          return (
+            <div key={id} >
+              <button className='img-btn' type="button" onClick={()=>setIndex(id - 1)}>
+                <img src={require(`../${thumbnail}`)} alt={name} />
+              </button>  
+            </div>
+          )
+        })
+      }
+      </div>
+    </div>
+    <section className="product-info">
+      <div className="image-slide">
+        <div className="btn-slide">
+          <button className="slide-btn prev-btn" onClick={prevImage}>
+            <Prev />
+          </button>
+          <button className="slide-btn next-btn" onClick={nextImage}>
+            <Next />
+          </button>
+        </div>
+        <div className="image-container">
+          <img src={require(`../${url}`)} alt={""} /> 
+        </div>
+      </div>
+      {
+        cart.map((item)=> {
+          const {id, title, price, desc} = item
+          return (
+            <div key={id}>
+              <p className="company-title">sneaker company</p>
+              <h1 className="product-info-title">{title}</h1>
+              <p className="more-info">{desc}</p>
+              <div className="pricing">
+                <div className="current-price">
+                  <h1>${price}.00<span className="special-offer">50%</span></h1>
+                </div>
+                <div className="old-price">
+                  <p>${price * 2}.00</p>
+                </div>
+              </div>
+              <Form updateCart={updateCart} updateItemNo={updateItemNo}/>
+            </div>
+          )
+        })
+      }
+    </section>
+  <ProductModal />
+  </div>
 	)
 }
 

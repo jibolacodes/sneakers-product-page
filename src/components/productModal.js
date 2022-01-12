@@ -43,8 +43,7 @@ const ProductModal = () => {
        			<Multiply className="multiply" />
           </button>
         </div>
-
-	        <div className="product-slide">
+	        <div className="modal-slide">
 		        <div className="top-img">
 		          <button className="slide-btn prev-btn" onClick={prevImage}>
 		          	<Prev />
@@ -56,20 +55,20 @@ const ProductModal = () => {
 		          	<Next />
 		          </button>
 		        </div>	
-
-				
-				  {
-					  images.map((image) => {
-						const {id, name, url, thumbnail} = image
-						  return (
-							<div key={id} className="thumbnail" style={{padding:'0 2.4rem'}}>
-								<a href={url}>
-								<img src={require(`../${thumbnail}`)} alt={name} />
-								</a>
-							</div>
-						)
-					  })
-				  }
+      <div className="thumbnail">
+      {
+        images.map((item)=> {
+          const {id, name, thumbnail} = item
+          return (
+            <div key={id} >
+              <button className='img-btn' type="button" onClick={()=>setIndex(id - 1)}>
+                <img src={require(`../${thumbnail}`)} alt={name} />
+              </button>  
+            </div>
+          )
+        })
+      }
+      </div>
 	        </div>
     </div>
 	)
