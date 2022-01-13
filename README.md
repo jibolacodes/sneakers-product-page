@@ -37,8 +37,8 @@ Users should be able to:
 ![desktop-active](src/assets/images/screenshot-desktop-active.png)
 
 ## Link
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7f4538e9-a5a7-41aa-8af9-598e0f0e5476/deploy-status)](https://app.netlify.com/sites/jibolacodes-sneakers-product-page/deploys)
-Link to solution site :
+[![Netlify Status](https://api.netlify.com/api/v1/badges/42b3ee2a-0420-4069-a4aa-e552da3a9154/deploy-status)](https://app.netlify.com/sites/jibolacodes-sneakers-product-page/deploys)
+Link to live site : https://jibolacodes-sneakers-product-page.netlify.app/
 
 ## My process
 
