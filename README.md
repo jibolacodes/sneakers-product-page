@@ -35,7 +35,7 @@ Users should be able to:
 ![mobile-active](/assets/images/screenshot-mobile-active.png)
 ![desktop](/assets/images/screenshot-desktop.png)
 ![desktop-active](/assets/images/screenshot-desktop-active.png)
-<img src="assets/images/screenshot-mobile.png" >
+<img src="/assets/images/image-product4-thumbnail.jpg" >
 
 ## Link
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7f4538e9-a5a7-41aa-8af9-598e0f0e5476/deploy-status)](https://app.netlify.com/sites/jibolacodes-sneakers-product-page/deploys)
