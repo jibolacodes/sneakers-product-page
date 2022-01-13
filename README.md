@@ -17,7 +17,10 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
-
+This app was built to the following screen widths : 
+- 1440px - Desktop
+- 375px - Mobile
+                                                    
 ### The challenge
 
 Users should be able to:
