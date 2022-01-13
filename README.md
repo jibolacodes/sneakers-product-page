@@ -38,7 +38,8 @@ Users should be able to:
 
 ## Link
 [![Netlify Status](https://api.netlify.com/api/v1/badges/42b3ee2a-0420-4069-a4aa-e552da3a9154/deploy-status)](https://app.netlify.com/sites/jibolacodes-sneakers-product-page/deploys)
-Link to live site : https://jibolacodes-sneakers-product-page.netlify.app/
+Live site : https://jibolacodes-sneakers-product-page.netlify.app/
+Solution site : http://surl.li/bdcvb
 
 ## My process
 
