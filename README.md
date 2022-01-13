@@ -31,11 +31,10 @@ Users should be able to:
 
 ## Screenshot
 
-![mobile](assets/images/screenshot-mobile.png)
-![mobile-active](assets/images/screenshot-mobile-active.png)
+![mobile](src/assets/images/screenshot-mobile.png)
+![mobile-active](src/assets/images/screenshot-mobile-active.png)
 ![desktop](src/assets/images/screenshot-desktop.png)
 ![desktop-active](src/assets/images/screenshot-desktop-active.png)
-<img src="assets/images/image-product4-thumbnail.jpg" >
 
 ## Link
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7f4538e9-a5a7-41aa-8af9-598e0f0e5476/deploy-status)](https://app.netlify.com/sites/jibolacodes-sneakers-product-page/deploys)
